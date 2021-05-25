@@ -27,7 +27,7 @@ const getPromises = function() {
 
 // function to list out multiple cities returned from query
 function cityListing(cities) {
-    const body = document.querySelector("body");
+    const div = document.querySelector("#mainContent");
     const list = document.createElement("ul");
     for(city of cities) {
         const li = document.createElement("li");
@@ -37,7 +37,7 @@ function cityListing(cities) {
         li.city = city;
         list.appendChild(li);
     }
-    body.appendChild(list);
+    div.appendChild(list);
 }
 
 // function to receive the search query from user via promises bound to button click and input enter key press
@@ -60,17 +60,24 @@ const getQuery = function() {
     return [promise1, promise2];
 };
 
-// main function
+// function to get the query from the user and kick things off
+function handleInput(e) {
+    if(e.type === "click" || e.keyCode === 13) {
+        main(document.querySelector("#cityInput").value);
+        clean();
+    }
+}
+
+// function to clean up the input field and the DOM body
+function clean() {
+    document.querySelector("#cityInput").value = "";
+    document.querySelector("#mainContent").innerText = "";
+}
 
 
-
-(async () => {
+// "main" function
+async function main(query) {
     try {
-        // clean input field
-        document.querySelector("#cityInput").value = "";
-
-        let query = await Promise.race(getQuery());
-
         // we get lat and lon from the returned city, or if multiple from user selecting one from the list
         let lat, lon;
         const city = await getCity(query);
@@ -92,8 +99,17 @@ const getQuery = function() {
                     console.log(error);
             })
         }
-
     } catch(err) {
         console.log(err)
     }
-})();
+}
+
+// top level code
+const input = document.querySelector("#cityInput");
+const btn = document.querySelector("#submitBtn");
+
+// clean input field
+input.value = "";
+
+input.addEventListener("keypress", handleInput);
+btn.addEventListener("click", handleInput);
