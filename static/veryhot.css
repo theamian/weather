@@ -2,6 +2,8 @@ body {
     overflow-x: hidden;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: red;
+    color: white;
 }
 .city {
     list-style-type: none;
@@ -27,25 +29,25 @@ body {
 }
 
 .cityName {
-    color: black;
+    color: white;
     line-height: initial;
     font-size: 8vh !important;
-    text-shadow: 1px 1px 3px rgba(128, 128, 128, 0.750);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
 }
 .countryName {
     color: black;
     font-size: large;
     line-height: initial;
     font-size: 4vh;
-    text-shadow: 1px 1px 3px rgba(128, 128, 128, 0.750);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
 }
 nav {
-    background-color: rgba(128, 128, 128, 0.750);   
+    background-color: rgba(0, 0, 0, 0.4);
     height: 6vh;
     width: 100%;
     padding-left: 1vw;
     line-height: 6vh;
-    box-shadow: 0 0.5vh 2vh rgba(128, 128, 128, 0.550);
+    box-shadow: 0 0.5vh 2vh white;
 }
 input[type="button"] {
     font-family: inherit;
@@ -59,19 +61,20 @@ ul {
     margin-right: 4vw;
 }
 .mainCard {
+    background-color: rgba(0, 0, 0, 0.4);   
     display: flex;
     align-items: center;
     margin: 8vh auto;
     width:max-content;
     border-radius: 5px;
-    box-shadow: 0 0.5vh 2vh rgba(128, 128, 128, 0.550), 
-        0 -0.1vh 1vh rgba(128, 128, 128, 0.550);
+    box-shadow: 0 0.5vh 2vh white, 
+    0 -0.1vh 1vh white;
     padding: 4vh;
 }
 .rightMainColumn{
     font-size: 20vh;
     line-height: 16vh;
-    text-shadow: 1px 1px 3px rgba(128, 128, 128, 0.750);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
 }
 .mainColumnItem {
     text-align: right;
@@ -83,12 +86,13 @@ ul {
     justify-content: space-between;
 }
 .forecastCard {
+    background-color: rgba(0, 0, 0, 0.4);   
     min-width: 10%;
     font-size: 2vh;
     padding: 1vh;
     border-radius: 5px;
-    box-shadow: 0 0.5vh 2vh rgba(128, 128, 128, 0.550), 
-        0 -0.1vh 1vh rgba(128, 128, 128, 0.550);
+    box-shadow: 0 0.5vh 2vh white, 
+        0 -0.1vh 1vh white;
 }
 .unitContainer {
     color: white;
@@ -105,11 +109,12 @@ ul {
     margin-top: 2vh;
 }
 .alertCard {
+    background-color: rgba(0, 0, 0, 0.4);   
     font-family: monospace;
     padding: 1vh;
     border-radius: 5px;
-    box-shadow: 0 0.5vh 2vh rgba(128, 128, 128, 0.550), 
-        0 -0.1vh 1vh rgba(128, 128, 128, 0.550);
+    box-shadow: 0 0.5vh 2vh white, 
+        0 -0.1vh 1vh white;
 }
 .error {
     margin-top: 2vh;
