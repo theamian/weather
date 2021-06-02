@@ -309,7 +309,7 @@ function changeStyling(status) {
     hot: "hot",
     veryhot: "veryhot",
   };
-  document.querySelector("link").href = `static/${directory[status]}.css`;
+  document.querySelector("#style").href = `static/${directory[status]}.css`;
 }
 
 // function to call changeStyling function based on parameters
