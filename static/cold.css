@@ -141,6 +141,7 @@ ul {
         display: block;
         padding: 2vh;
         width: fit-content;
+        width: -moz-fit-content;
     }
     .cityName, .city {
         overflow-wrap: break-word;
