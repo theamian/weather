@@ -133,11 +133,12 @@ function getDateString(utc) {
     6: "Saturday",
   };
   let date = new Date(utc * 1000);
-  return `${days[date.getDay()]} ${date.getMonth()}/${date.getDate()}`;
+  return `${days[date.getDay()]} ${date.getMonth()+1}/${date.getDate()}`;
 }
 
 // function for displaying the weather info
 function displayInfo({ name, weatherData, units }) {
+  console.log(weatherData);
   clean();
   whatstheTemp(weatherData, units);
   const lat = weatherData.lat,
@@ -200,8 +201,10 @@ function displayInfo({ name, weatherData, units }) {
   forecastContainer.classList.add("forecastContainer");
 
   for (day of weatherData.daily) {
+    console.log(day.dt)
+    console.log(weatherData.daily[0].dt)
+    if(day.dt === weatherData.daily[0].dt) continue; //since the first entry in the array is for today we check for that and skip it
     let dateString = getDateString(day.dt);
-
     const forecastCard = document.createElement("div");
     forecastCard.classList.add("forecastCard");
 
